@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const CartBanner = () => {
@@ -8,7 +9,7 @@ const CartBanner = () => {
       <img src="images/Meubel House_Logos-05.png" alt="Logo" className="mb-2 h-16" />
         <div className="text-4xl font-bold">Cart</div>
         <div className="mt-2 text-sm">
-          <a href="/" className="hover:underline">Home</a> &gt; <span>Cart</span>
+          <Link href="/" className="hover:underline">Home</Link> &gt; <span>Cart</span>
         </div>
       </div>
     </div>
