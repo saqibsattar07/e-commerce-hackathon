@@ -14,7 +14,7 @@ export default function Hero() {
               </div>
               <div className="flex-shrink-0 mt-8 lg:mt-0">
                 <img
-                  src="images/rocket_single_seater_1.png"
+                  src="images/Rocket_single_seater_1.png"
                   alt="Rocket single seater"
                   className="w-full max-w-md mx-auto lg:max-w-none"
                 />
