@@ -53,16 +53,16 @@ const Header = () => {
         {/* Icons */}
         <div className="ml-auto hidden md:flex space-x-8">
       <Link href="/profile" aria-label="User Profile">
-        <TbUserExclamation className="text-gray-800 hover:text-gray-600 text-[20px] cursor-pointer" />
+        <TbUserExclamation className="text-gray-800 hover:text-gray-600 text-[20px]" />
       </Link>
       <Link href="/search" aria-label="Search">
-        <FiSearch className="text-gray-800 hover:text-gray-600 text-[20px] cursor-pointer" />
+        <FiSearch className="text-gray-800 hover:text-gray-600 text-[20px]" />
       </Link>
       <Link href="/wishlist" aria-label="Wishlist">
-        <FaRegHeart className="text-gray-800 hover:text-gray-600 text-[20px] cursor-pointer" />
+        <FaRegHeart className="text-gray-800 hover:text-gray-600 text-[20px]" />
       </Link>
       <Link href="/cart" aria-label="Shopping Cart">
-        <MdOutlineShoppingCart className="text-gray-800 hover:text-gray-600 text-[20px] cursor-pointer" />
+        <MdOutlineShoppingCart className="text-gray-800 hover:text-gray-600 text-[20px]" />
       </Link>
     </div>
       </nav>

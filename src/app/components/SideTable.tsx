@@ -16,7 +16,7 @@ const SideTable = () => {
       </div>
       <div className="flex flex-col items-center w-full md:w-1/2 lg:w-1/3">
         <img 
-          src="images/Cloud sofa three seater + ottoman_3 1.png" 
+          src="images/cloud-sofa-three-seater.png" 
           alt="Sofa Side Table" 
           className="w-full h-auto object-cover" 
         />

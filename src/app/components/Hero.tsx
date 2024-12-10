@@ -8,7 +8,7 @@ export default function Hero() {
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[54px] font-medium font-poppins text-gray-900 w-full sm:w-[440px] h-auto">
                   Rocket single seater
                 </h1>
-                <button className="mt-4 px-6 py-2 text-gray-950 font-medium font-poppins text-lg sm:text-xl md:text-2xl underline decoration-2 underline-offset-8">
+                <button className="mt-10 px-1 py-2 text-gray-950 font-medium font-poppins text-lg sm:text-xl md:text-2xl underline decoration-2 underline-offset-8">
                   Shop Now
                 </button>
               </div>

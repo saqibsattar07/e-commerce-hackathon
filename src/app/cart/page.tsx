@@ -38,14 +38,14 @@ export default function Cart() {
           <div className="self-start mt-8">Total</div>
         </div>
         <div className="flex flex-col">
-          <div className="self-end text-base text-neutral-400">{subtotal}</div>
+          <div className=" text-base text-neutral-400">{subtotal}</div>
           <div className="mt-8 text-xl font-medium text-yellow-600">
             {total}
           </div>
         </div>
       </div>
       <button
-        className="px-14 py-4 mt-11 mr-2.5 ml-3 text-xl text-black rounded-2xl border border-black border-solid max-md:px-5 max-md:mt-10 max-md:ml-2.5"
+        className="px-10 py-3 mt-11 mr-2.5 ml-3 text-xl text-black rounded-lg border border-black border-solid max-md:px-5 max-md:mt-10 max-md:ml-2.5"
         onClick={() => alert("Checking out...")}
       >
         Check Out
@@ -75,7 +75,7 @@ export default function Cart() {
       <div className="flex flex-col ml-5 w-[65%] max-md:ml-0 max-md:w-full">
         <div className="flex gap-10 self-stretch my-auto text-base text-black max-md:mt-10 max-md:max-w-full">
           <div className="my-auto basis-auto text-neutral-400">{price}</div>
-          <div className="px-3.5 py-1 whitespace-nowrap rounded-md border border-solid border-neutral-400">
+          <div className="ml-16 px-3.5 py-1 whitespace-nowrap rounded-md border border-solid border-neutral-400">
             {quantity}
           </div>
           <div className="my-auto basis-auto">{subtotal}</div>
@@ -120,7 +120,7 @@ export default function Cart() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col ml-5 w-[32%] max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col ml-2 w-[32%] max-md:ml-0 max-md:w-full">
               <CartTotals subtotal="Rs. 250,000.00" total="Rs. 250,000.00" />
             </div>
           </div>
@@ -130,3 +130,4 @@ export default function Cart() {
     </div>
   );
 }
+

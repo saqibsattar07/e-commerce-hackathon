@@ -44,14 +44,14 @@ const ContactPage: React.FC = () => {
         {isTextArea ? (
           <textarea
             id={inputId}
-            className="self-stretch px-8 pt-7 pb-16 mt-6 bg-white rounded-xl border border-solid border-neutral-400 text-neutral-400 max-md:px-5 max-md:mr-1 max-md:max-w-full"
+            className="self-stretch px-4 pt-3 pb-16 mt-6 bg-white rounded-xl border border-solid border-neutral-400 text-neutral-400 max-md:px-5 max-md:mr-1 max-md:max-w-full"
             placeholder={placeholder}
           />
         ) : (
           <input
             type={type}
             id={inputId}
-            className="self-stretch px-8 py-7 mt-6 whitespace-nowrap bg-white rounded-xl border border-solid border-neutral-400 text-neutral-400 max-md:px-5 max-md:max-w-full"
+            className="self-stretch px-4 py-3 mt-6 whitespace-nowrap bg-white rounded-xl border border-solid border-neutral-400 text-neutral-400 max-md:px-5 max-md:max-w-full"
             placeholder={placeholder}
           />
         )}
@@ -108,7 +108,7 @@ const ContactPage: React.FC = () => {
                   />
                   <button
                     type="submit"
-                    className="px-16 py-3 mt-12 max-w-full whitespace-nowrap rounded-2xl border border-black border-solid w-[237px] max-md:px-5 max-md:mt-10"
+                    className="px-16 py-3 mt-12 max-w-full whitespace-nowrap rounded-2xl border bg-gray-900 text-white border-black border-solid w-[237px] max-md:px-5 max-md:mt-10"
                   >
                     Submit
                   </button>

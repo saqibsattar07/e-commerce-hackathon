@@ -6,7 +6,7 @@ const AsgaardSofa = () => {
       <div className="flex flex-col md:flex-row items-center justify-between w-full md:w-3/4">
         <div className="flex justify-center w-full md:w-1/2">
           <img
-            src="images/Asgaard Sofa 1.png"
+            src="images/asgaard_sofa.png"
             alt="Asgaard Sofa"
             className="w-full h-auto object-cover"
           />
