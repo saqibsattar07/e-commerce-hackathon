@@ -19,7 +19,7 @@ interface CartTotalsProps {
 export default function Cart() {
   const cartItems = [
     {
-      image: "images/Asgaard sofa 1.png",
+      image: "images/asgaard_sofa.png",
       name: "Asgaard sofa",
       price: "Rs. 250,000.00",
       quantity: 1,
