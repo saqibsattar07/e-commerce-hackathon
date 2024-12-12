@@ -7,13 +7,13 @@ import SideTable from "./components/SideTable";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Hero />
       <SideTable />
       <FurnitureShowcase />
       <AsgaardSofa />
       <BlogPosts />
       <InstagramSection />
-    </div>
+    </>
   );
 }

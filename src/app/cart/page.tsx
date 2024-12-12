@@ -96,7 +96,7 @@ export default function Cart() {
   );
 
   return (
-    <div>
+    <>
       <CartBanner />
       <div className="flex flex-col rounded-none">
         <div className="px-20 py-16 w-full bg-white max-md:px-5 max-md:max-w-full">
@@ -127,7 +127,6 @@ export default function Cart() {
         </div>
       </div>
       <DeliveryFeature />
-    </div>
+    </>
   );
 }
-
