@@ -61,15 +61,14 @@ const ProductPage = () => {
     console.log("Selected color:", color);
   };
 
-  // Example data for demonstration
   const productData = {
-    title: "Example Product",
+    title: "Asgaard Sofa",
     price: 99.99,
     rating: 4.5,
-    description: "This is an example product.",
-    sku: "example-sku",
-    category: "Example Category",
-    tags: ["tag1", "tag2"],
+    description: "This is an Asgaard product.",
+    sku: "",
+    category: "",
+    tags: [],
   };
 
   return (

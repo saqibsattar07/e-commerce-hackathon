@@ -8,11 +8,11 @@ const ProductOverview = () => {
 
   const images = [
     {
-      src: "product-detail/cloud sofa three seater.png",
+      src: "product-detail/cloud_sofa_three_seater.png",
       alt: "Product image 1",
     },
     {
-      src: "product-detail/cloud sofa three seater_1.png",
+      src: "product-detail/cloud_sofa_three_seater_1.png",
       alt: "Product image 2",
     },
   ];
