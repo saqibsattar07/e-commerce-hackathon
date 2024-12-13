@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const ContactBanner = () => {
+const CheckBanner = () => {
   return (
     <div
       className="relative bg-cover bg-center h-64"
@@ -14,16 +14,16 @@ const ContactBanner = () => {
           alt="Logo"
           className="mb-2 h-16"
         />
-        <div className="text-4xl font-bold">Shop</div>
+        <div className="text-4xl font-bold">Checkout</div>
         <div className="mt-2 text-sm">
           <Link href="/" className="hover:underline">
             Home
           </Link>{" "}
-          &gt; <span>Shop</span>
+          &gt; <span>Checkout</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default ContactBanner;
+export default CheckBanner;

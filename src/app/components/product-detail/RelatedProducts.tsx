@@ -21,11 +21,11 @@ const furnitureItems = [
   },
 ];
 
-const FurnitureShowcase = () => {
+const RelatedProducts = () => {
   return (
     <div className="container mx-auto p-4">
       <h2 className="text-2xl sm:text-3xl md:text-[36px] font-medium font-poppins text-center mb-4">
-        Top Picks For You
+        Related Products
       </h2>
       <p className="text-center font-medium text-sm sm:text-base md:text-lg text-[#9F9F9F] mb-8">
         Find a bright idea to suit your taste with our great selection of
@@ -63,4 +63,4 @@ const FurnitureShowcase = () => {
   );
 };
 
-export default FurnitureShowcase;
+export default RelatedProducts;

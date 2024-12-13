@@ -18,16 +18,20 @@ export function InstagramSection({
           loading="lazy"
           src={backgroundImage}
           alt="Instagram Background"
-          className="object-cover absolute inset-0 w-full h-full opacity-50"
+          className="object-cover absolute inset-0 w-full h-full"
         />
         <div className="relative flex flex-col items-center text-center max-w-full w-[454px] max-md:mb-2.5">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 max-md:text-3xl">{title}</h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6">{subtitle}</p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 max-md:text-3xl">
+            {title}
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-6">
+            {subtitle}
+          </p>
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 mt-5 bg-red-200 text-black font-medium rounded-full w-[220px] sm:w-[255px] max-md:px-5"
+            className="px-8 py-3 mt-5 bg-pink-200 text-black font-medium rounded-full w-[220px] sm:w-[255px] max-md:px-5"
             role="button"
             tabIndex={0}
           >

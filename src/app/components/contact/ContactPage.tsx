@@ -1,5 +1,9 @@
 import * as React from "react";
-import { AiOutlineHome, AiOutlinePhone, AiOutlineClockCircle } from "react-icons/ai";
+import {
+  AiOutlineHome,
+  AiOutlinePhone,
+  AiOutlineClockCircle,
+} from "react-icons/ai";
 
 interface ContactInfoProps {
   icon: React.ReactNode;
@@ -33,88 +37,104 @@ const ContactPage: React.FC = () => {
     },
   ];
 
-  const InputField: React.FC<InputFieldProps> = ({ label, type = "text", placeholder, isTextArea }) => {
+  const InputField: React.FC<InputFieldProps> = ({
+    label,
+    type = "text",
+    placeholder,
+    isTextArea,
+  }) => {
     const inputId = `${label.toLowerCase().replace(/\s/g, "-")}-input`;
 
     return (
-      <>
-        <label htmlFor={inputId} className="mt-9 font-medium">
+      <div className="w-full">
+        <label htmlFor={inputId} className="block mt-6 font-medium">
           {label}
         </label>
         {isTextArea ? (
           <textarea
             id={inputId}
-            className="self-stretch px-4 pt-3 pb-16 mt-6 bg-white rounded-xl border border-solid border-neutral-400 text-neutral-400 max-md:px-5 max-md:mr-1 max-md:max-w-full"
+            className="w-full px-4 py-3 mt-2 bg-white border border-neutral-400 rounded-xl text-neutral-600 focus:outline-none focus:ring focus:ring-gray-300"
             placeholder={placeholder}
           />
         ) : (
           <input
             type={type}
             id={inputId}
-            className="self-stretch px-4 py-3 mt-6 whitespace-nowrap bg-white rounded-xl border border-solid border-neutral-400 text-neutral-400 max-md:px-5 max-md:max-w-full"
+            className="w-full px-4 py-3 mt-2 bg-white border border-neutral-400 rounded-xl text-neutral-600 focus:outline-none focus:ring focus:ring-gray-300"
             placeholder={placeholder}
           />
         )}
-      </>
+      </div>
     );
   };
 
-  const ContactInfo: React.FC<ContactInfoProps> = ({ icon, title, details }) => {
+  const ContactInfo: React.FC<ContactInfoProps> = ({
+    icon,
+    title,
+    details,
+  }) => {
     return (
-      <div className="flex gap-8 self-start mt-11 max-md:mt-10 max-md:ml-2">
-        <div className="self-start mt-1.5">{icon}</div>
-        <div className="flex flex-col">
-          <div className="self-start text-2xl font-medium">{title}</div>
-          <div className="text-base">
+      <div className="flex gap-4 mt-8">
+        <div>{icon}</div>
+        <div>
+          <h3 className="text-lg font-semibold">{title}</h3>
+          <p className="mt-2 text-base text-neutral-600">
             {details.map((detail, index) => (
               <React.Fragment key={index}>
                 {detail}
                 <br />
               </React.Fragment>
             ))}
-          </div>
+          </p>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="flex flex-col rounded-none">
-      <div className="flex flex-col items-center px-20 pt-24 w-full bg-white max-md:px-5 max-md:max-w-full">
-        <div className="flex flex-col items-center w-full max-w-[1058px] max-md:max-w-full">
-          <h1 className="text-4xl font-semibold text-black">Get In Touch With Us</h1>
-          <p className="mt-2 text-base text-center text-neutral-400 w-[644px] max-md:max-w-full">
-            For More Information About Our Product & Services. Please Feel Free To Drop Us An Email.
-            Our Staff Always Be There To Help You Out. Do Not Hesitate!
+    <div className="bg-gray-50">
+      <div className="container mx-auto px-6 py-12 md:py-16 lg:py-24">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            Get In Touch With Us
+          </h1>
+          <p className="mt-4 text-base text-neutral-600">
+            For more information about our product & services, please feel free
+            to drop us an email. Our staff will always be there to help you out.
+            Do not hesitate!
           </p>
-          <div className="self-stretch mt-3.5 max-md:max-w-full">
-            <div className="flex gap-5 max-md:flex-col">
-              <div className="flex flex-col w-[38%] max-md:ml-0 max-md:w-full">
-                <div className="flex flex-col px-12 py-16 mx-auto mt-16 w-full text-black bg-white max-md:px-5 max-md:mt-10">
-                  {contactData.map((info, index) => (
-                    <ContactInfo key={index} {...info} />
-                  ))}
-                </div>
-              </div>
-              <div className="flex flex-col ml-5 w-[62%] max-md:ml-0 max-md:w-full">
-                <form className="flex flex-col grow items-start pt-28 pr-8 pb-16 pl-20 w-full text-base text-black bg-white max-md:px-5 max-md:pt-24 max-md:mt-8 max-md:max-w-full">
-                  <InputField label="Your name" placeholder="Abc" />
-                  <InputField label="Email address" type="email" placeholder="Abc@def.com" />
-                  <InputField label="Subject" placeholder="This is an optional" />
-                  <InputField
-                    label="Message"
-                    placeholder="Hi! I'd like to ask about"
-                    isTextArea
-                  />
-                  <button
-                    type="submit"
-                    className="px-16 py-3 mt-12 max-w-full whitespace-nowrap rounded-2xl border bg-gray-900 text-white border-black border-solid w-[237px] max-md:px-5 max-md:mt-10"
-                  >
-                    Submit
-                  </button>
-                </form>
-              </div>
-            </div>
+        </div>
+
+        <div className="mt-12 flex flex-col lg:flex-row lg:gap-12">
+          {/* Contact Info Section */}
+          <div className="flex-1 bg-white shadow-lg rounded-lg p-6">
+            {contactData.map((info, index) => (
+              <ContactInfo key={index} {...info} />
+            ))}
+          </div>
+
+          {/* Contact Form Section */}
+          <div className="flex-1 bg-white shadow-lg rounded-lg p-6 mt-8 lg:mt-0">
+            <form className="space-y-6">
+              <InputField label="Your Name" placeholder="John Doe" />
+              <InputField
+                label="Email Address"
+                type="email"
+                placeholder="example@domain.com"
+              />
+              <InputField label="Subject" placeholder="Optional subject" />
+              <InputField
+                label="Message"
+                isTextArea
+                placeholder="Hi! I'd like to ask about..."
+              />
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition"
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>

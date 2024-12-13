@@ -6,14 +6,14 @@ import { FaRegHeart, FaTimes } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { TbUserExclamation } from "react-icons/tb";
-import { GiHamburgerMenu } from "react-icons/gi"; 
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Shop", href: "/shop" },
-    { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex items-center md:hidden">
           <GiHamburgerMenu
             className="text-gray-800 text-[24px] cursor-pointer"
-            onClick={() => setIsMenuOpen(!isMenuOpen)} 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
         </div>
 
@@ -37,7 +37,7 @@ const Header = () => {
 
         {/* Icons (Small Screens) */}
         <div className="flex items-center space-x-4 md:hidden">
-          <Link href="/profile" aria-label="User Profile">
+          <Link href="/account" aria-label="User Profile">
             <TbUserExclamation className="text-gray-800 text-[20px]" />
           </Link>
           <Link href="/search" aria-label="Search">
@@ -67,7 +67,7 @@ const Header = () => {
 
         {/* Icons (Desktop) */}
         <div className="hidden md:flex space-x-8">
-          <Link href="/profile" aria-label="User Profile">
+          <Link href="/account" aria-label="User Profile">
             <TbUserExclamation className="text-gray-800 hover:text-gray-600 text-[20px]" />
           </Link>
           <Link href="/search" aria-label="Search">
