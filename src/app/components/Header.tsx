@@ -7,8 +7,13 @@ import { FiSearch } from "react-icons/fi";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { TbUserExclamation } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { RootState } from "../redux/store";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+
+  const item = useSelector((state: RootState) => state.cart);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = [
     { label: "Home", href: "/" },
@@ -79,6 +84,7 @@ const Header = () => {
           <Link href="/cart" aria-label="Shopping Cart">
             <MdOutlineShoppingCart className="text-gray-800 hover:text-gray-600 text-[20px]" />
           </Link>
+          {item.length}
         </div>
       </nav>
 

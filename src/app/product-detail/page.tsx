@@ -3,6 +3,21 @@
 import React, { useState } from "react";
 import ProductOverview from "../components/product-detail/ProductOverview";
 import RelatedProducts from "../components/product-detail/RelatedProducts";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../redux/cartslice";
+
+interface Product {
+  id: number;
+  image: string;
+  name: string;
+  price: number; 
+  quantity: number;
+  subtotal: number;
+}
+
+interface CartItem extends Product {
+  title: string;
+}
 
 interface ColorOption {
   color: string;
@@ -21,6 +36,16 @@ interface SocialIcon {
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+  const handleAdd = (product: Product) => {
+    const cartItem: CartItem = {
+      ...product,
+      title: product.name,
+      subtotal: product.price * product.quantity, // Ensures subtotal calculation
+    };
+    dispatch(addProduct(cartItem)); // Dispatch the correct cart item
+  };
 
   const colors: ColorOption[] = [
     { color: "purple", bgClass: "bg-violet-500" },
@@ -61,14 +86,14 @@ const ProductPage = () => {
     console.log("Selected color:", color);
   };
 
-  const productData = {
-    title: "Asgaard Sofa",
-    price: 99.99,
-    rating: 4.5,
-    description: "This is an Asgaard product.",
-    sku: "",
-    category: "",
-    tags: [],
+  const productData: Product = {
+    id: 1,
+    image:
+      "https://cdn.builder.io/api/v1/image/assets/TEMP/e42021ae3a815bdeb470a2baf0636c749375262e745db1e29731037dea9335a1?placeholderIfAbsent=true&apiKey=8f5c80c62bcc484eb4fc7a62c9e22cd5",
+    name: "Asgaard Sofa",
+    price: 250000,
+    quantity: quantity,
+    subtotal: quantity * 250000,
   };
 
   return (
@@ -78,14 +103,14 @@ const ProductPage = () => {
           <div className="flex flex-col w-full lg:w-7/12">
             <img
               loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/e42021ae3a815bdeb470a2baf0636c749375262e745db1e29731037dea9335a1?placeholderIfAbsent=true&apiKey=8f5c80c62bcc484eb4fc7a62c9e22cd5"
+              src={productData.image}
               alt="Asgaard sofa product image"
               className="object-contain w-full aspect-[1.1] rounded-md"
             />
           </div>
           <div className="flex flex-col w-full lg:w-5/12">
             <h1 className="text-2xl md:text-4xl lg:text-5xl text-black mb-3">
-              {productData.title}
+              {productData.name}
             </h1>
             <div className="text-lg md:text-xl lg:text-2xl font-medium text-neutral-400 mb-2">
               ${productData.price.toFixed(2)}
@@ -98,9 +123,11 @@ const ProductPage = () => {
                 className="object-contain w-20"
               />
               <span className="border-l border-neutral-400 h-6 mx-3" />
-              <span>{productData.rating} Customer Review</span>
+              <span>4.5 Customer Review</span>
             </div>
-            <p className="text-sm text-black mb-6">{productData.description}</p>
+            <p className="text-sm text-black mb-6">
+              This is an Asgaard product.
+            </p>
 
             <div className="mb-4">
               <span className="text-sm text-neutral-400">Size</span>
@@ -152,41 +179,22 @@ const ProductPage = () => {
                   +
                 </button>
               </div>
-              <button className="px-6 py-2 bg-black text-white text-lg rounded-lg">
+              <button
+                onClick={() => handleAdd(productData)}
+                className="px-6 py-2 bg-black text-white text-lg rounded-lg"
+              >
                 Add To Cart
               </button>
             </div>
 
-            <div className="text-sm text-neutral-400">
-              <div className="flex justify-between mb-2">
-                <span>SKU</span>
-                <span>{productData.sku}</span>
-              </div>
-              <div className="flex justify-between mb-2">
-                <span>Category</span>
-                <span>{productData.category}</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Tags</span>
-                <span>
-                  {productData.tags?.join(", ") || "No tags available"}
-                </span>
-              </div>
+            {/* Social Icons Section */}
+            <div className="flex gap-4 mt-4">
+              {socialIcons.map((icon, index) => (
+                <a key={index} href="#" aria-label={icon.alt}>
+                  <img src={icon.src} alt={icon.alt} className="w-6 h-6" />
+                </a>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="flex justify-center items-center gap-5 mt-10">
-          <span className="text-neutral-400">Share:</span>
-          <div className="flex gap-3">
-            {socialIcons.map((icon, index) => (
-              <img
-                key={index}
-                loading="lazy"
-                src={icon.src}
-                alt={icon.alt}
-                className="w-6 h-6"
-              />
-            ))}
           </div>
         </div>
       </div>
